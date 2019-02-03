@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-job-noname-company": {
+    "test-job-1": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-job-noname-company",
+            "outputPath": "dist/test-job-1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-job-noname-company:build"
+            "browserTarget": "test-job-1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-job-noname-company:build:production"
+              "browserTarget": "test-job-1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-job-noname-company:build"
+            "browserTarget": "test-job-1:build"
           }
         },
         "test": {
@@ -84,6 +85,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -107,7 +109,7 @@
         }
       }
     },
-    "test-job-noname-company-e2e": {
+    "test-job-1-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +118,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-job-noname-company:serve"
+            "devServerTarget": "test-job-1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-job-noname-company:serve:production"
+              "devServerTarget": "test-job-1:serve:production"
             }
           }
         },
@@ -136,5 +138,5 @@
       }
     }
   },
-  "defaultProject": "test-job-noname-company"
+  "defaultProject": "test-job-1"
 }

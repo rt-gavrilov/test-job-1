@@ -1,0 +1,18 @@
+<h1>Debouncer demo</h1>
+
+<div fxLayout="start center" fxLayoutGap="32px">
+  <button mat-raised-button color="primary" (click)="callFunction()">Call once</button>
+  <button mat-raised-button (click)="clearLog()" [disabled]="callLog.length == 0">Clear log</button>
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-slider color="primary" min="100" max="2000" step="100" [value]="timeout" (change)="changeTimeout($event)">
+    </mat-slider>
+    <p>{{timeout}}</p>
+  </div>
+</div>
+
+<br>
+
+<div *ngFor="let time of callLog">
+  {{time | date:'H:mm:ss.SSS'}}
+</div>
