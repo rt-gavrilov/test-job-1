@@ -1,0 +1,12 @@
+$padding: 16px;
+
+:host {
+  padding: $padding;
+  display: block;
+}
+
+h1 {
+  margin: -#{$padding} -#{$padding} $padding -#{$padding};
+  padding: 16px;
+  background-color: plum;
+}

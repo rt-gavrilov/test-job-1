@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'debouncer', loadChildren: './debouncer/debouncer.module#DebouncerModule', pathMatch: 'full'},
+  {path: 'todo', loadChildren: './todo/todo.module#TodoModule', pathMatch: 'full'},
   {path: '**', redirectTo: ''}
 ];
 

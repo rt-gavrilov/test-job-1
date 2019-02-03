@@ -1,0 +1,15 @@
+<h1 fxLayoutAlign="space-between center">
+  <span>Todo list</span>
+
+  <button mat-fab color="primary" (click)="add()">
+    <mat-icon>add</mat-icon>
+  </button>
+</h1>
+
+<app-todo *ngFor="let todo of todos"
+          [todo]="todo"
+          (remove)="remove($event)"
+          (reject)="reject($event)"
+          (complete)="complete($event)"
+>
+</app-todo>

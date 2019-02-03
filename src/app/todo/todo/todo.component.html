@@ -1,0 +1,32 @@
+<mat-card fxLayoutAlign="stretch stretch">
+  <div fxFlex="1 1 auto" fxLayout="column">
+    <h1>{{todo.name}}</h1>
+    <p>{{todo.description}}</p>
+
+    <div fxFlex="1 1 auto"></div>
+
+    <div fxLayoutAlign="start center" fxLayoutGap="32px">
+      <mat-chip-list>
+        <mat-chip color="primary" selected>{{todo.status}}</mat-chip>
+        <mat-chip *ngIf="todo.expired" color="warn" selected>Expired</mat-chip>
+      </mat-chip-list>
+      <span>Created: {{todo.createdAt | date}}</span>
+      <span>Deadline: {{todo.deadline | date}}</span>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="end end" fxFlex="none">
+    <ng-container *ngIf="! todo.done">
+      <button mat-button color="primary" (click)="handleComplete()">
+        Done!<mat-icon>check</mat-icon>
+      </button>
+      <button mat-button color="warn" (click)="handleReject()">
+        Won't do!<mat-icon>clear</mat-icon>
+      </button>
+    </ng-container>
+
+    <button mat-button (click)="handleRemove()">
+      Remove!<mat-icon>delete_forever</mat-icon>
+    </button>
+  </div>
+</mat-card>

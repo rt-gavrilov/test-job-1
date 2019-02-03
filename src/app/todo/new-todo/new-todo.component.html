@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Create new todo</h1>
+
+<br>
+
+<div fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="Name" autocomplete="off">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput formControlName="description" placeholder="Description" autocomplete="off"
+              matTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10">
+    </textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="datepicker" formControlName="deadline" placeholder="Deadline" autocomplete="off">
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+  </mat-form-field>
+
+  <div fxLayoutAlign="space-between center">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="submit()">Create</button>
+  </div>
+</div>
